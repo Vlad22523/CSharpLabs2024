@@ -9,15 +9,14 @@ namespace pr2
     internal class task1
     {
         public void start () {
-            Console.Write("Введіть перше ціле число: ");
+            Console.Write("the first integer: ");
             int num1 = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Введіть друге ціле число: ");
+            Console.Write("second integer: ");
             int num2 = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Введіть третє ціле число: ");
+            Console.Write("third integer: ");
             int num3 = Convert.ToInt32(Console.ReadLine());
 
-            // Перевірка умови для кожного числа і вибір чисел, що належать інтервалу [1, 24]
-            Console.WriteLine("Цілі числа з заданих, які належать інтервалу [1, 24]:");
+            Console.WriteLine("interval [1, 24]:");
             if (1 <= num1 && num1 <= 24)
             {
                 Console.WriteLine(num1);

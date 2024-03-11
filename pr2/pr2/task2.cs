@@ -9,49 +9,44 @@ namespace pr2
     internal class task2
     {
         public void start () {
-            Console.WriteLine("Введіть довжини сторін трикутника:");
-            Console.Write("Сторона A: ");
+            Console.WriteLine("enter sides of the triangle:");
+            Console.Write("side A: ");
             double sideA = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Сторона B: ");
+            Console.Write("side B: ");
             double sideB = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Сторона C: ");
+            Console.Write("side C: ");
             double sideC = Convert.ToDouble(Console.ReadLine());
 
-            // Перевірка на коректність введених даних
             if (sideA <= 0 || sideB <= 0 || sideC <= 0)
             {
-                Console.WriteLine("Введені довжини сторін повинні бути більшими за 0.");
+                Console.WriteLine("Entered side lengths must be greater than 0.");
                 return;
             }
 
-            // Перевірка на дійсність трикутника за теоремою про нерівність сторін
             if (!(sideA + sideB > sideC && sideA + sideC > sideB && sideB + sideC > sideA))
             {
-                Console.WriteLine("Трикутник з такими сторонами не існує.");
+                Console.WriteLine("the triangle does not exist");
                 return;
             }
 
-            // Обчислення периметру трикутника
             double perimeter = sideA + sideB + sideC;
-            Console.WriteLine($"Периметр трикутника: {perimeter}");
+            Console.WriteLine($"perimeter: {perimeter}");
 
-            // Обчислення площі трикутника за формулою Герона
             double s = perimeter / 2;
             double area = Math.Sqrt(s * (s - sideA) * (s - sideB) * (s - sideC));
-            Console.WriteLine($"Площа трикутника: {area}");
+            Console.WriteLine($"Area: {area}");
 
-            // Визначення виду трикутника
             if (sideA == sideB && sideB == sideC)
             {
-                Console.WriteLine("Трикутник є рівностороннім.");
+                Console.WriteLine("The triangle is equilateral");
             }
             else if (sideA == sideB || sideA == sideC || sideB == sideC)
             {
-                Console.WriteLine("Трикутник є рівнобедреним.");
+                Console.WriteLine("The triangle is isosceles");
             }
             else
             {
-                Console.WriteLine("Трикутник є різностороннім.");
+                Console.WriteLine("A triangle is versatile");
             }
         }
     }
